@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/static/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="/static/data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="/static/files/page_2/styles.css" type="text/css" rel="stylesheet"/>
+    <script>
+      function loadXMLDoc(text, targetid)
+      {
+          var xmlhttp;
+          if (window.XMLHttpRequest)
+          {
+              //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {
+              // IE6, IE5 浏览器执行代码
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if (xmlhttp.readyState<4)
+              {
+                  document.getElementById(targetid).innerHTML="Running";
+              }
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  document.getElementById(targetid).innerHTML=xmlhttp.responseText;
+              }
+          }
+          xmlhttp.open("POST","/response",true);
+          xmlhttp.setRequestHeader("Content-type","application/json");
+          var jsonObject = {"text": text}
+          xmlhttp.send(JSON.stringify(jsonObject));
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Unnamed (Image) -->
+    <div id="u0" class="ax_default image">
+      <img id="u0_img" class="img " src="/static/images/unnamed.jpg"/>
+      <div id="u0_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (Text Area) -->
+    <div id="u1" class="ax_default text_area">
+      <div id="u1_div" class=""></div>
+      <textarea id="u1_input" class="u1_input">combining temperature control and fabric settings with an extra - large stainless steel soleplate the job gets done quickly .
+        steaming has never been easier than with the vertical steam option , steam surge and spray mist .
+        this iron is complete with anti - drip and a 360 ° pivoting cord , a slip - resistant heel and an auto clean system. </textarea>
+    </div>
+
+    <!-- Unnamed (Text Field) -->
+    <div id="u2" class="ax_default text_field">
+      <div id="u2_div" class=""></div>
+      <input id="u2_input" type="text" value="black and decker ir1380s-2 digital steam iron" class="u2_input"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u3" class="ax_default label">
+      <div id="u3_div" class=""></div>
+      <div id="u3_text" class="text ">
+        <p><span style="text-decoration:none;">Product description: </span></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u4" class="ax_default box_1">
+      <img id="u4_img" class="img " src="/static/images/page_2/regen/u4.svg"/>
+      <div id="u4_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <button style="position:absolute;
+    left:505px;
+    top:204px;
+    width:101px;
+    height:33px;
+    font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight:700;
+    font-style:normal;
+    font-size:16px;"  type="button" onclick="loadXMLDoc(u2_input.value+' . '+u1_input.value, 'u7_text')">
+      <div id="u5_text" class="text ">
+        <p><span style="text-decoration:none;">Question</span></p>
+      </div>
+    </button>
+
+    <!-- Unnamed (Rectangle) -->
+    <button style="position:absolute;
+    left:672px;
+    top:204px;
+    width:101px;
+    height:33px;
+    font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight:700;
+    font-style:normal;
+    font-size:16px;" onclick="alert('Confirmed writing')">
+      <div id="u6_text" class="text ">
+        <p><span style="text-decoration:none;">Confirm</span></p>
+      </div>
+    </button>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u7" class="ax_default paragraph">
+      <div id="u7_div" class=""></div>
+      <div id="u7_text" class="text ">
+        <p>Click "Question" to generate clarification questions.</p>
+      </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u8" class="ax_default heading_3">
+      <div id="u8_div" class=""></div>
+      <div id="u8_text" class="text ">
+        <p><span style="text-decoration:none;">Questions</span></p>
+      </div>
+    </div>
+  </body>
+</html>

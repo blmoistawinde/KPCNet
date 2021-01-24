@@ -1,0 +1,10 @@
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+nltk
+spacy
+tqdm
+sacrebleu
+torch>=1.0.0
