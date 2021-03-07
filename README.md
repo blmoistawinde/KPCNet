@@ -12,7 +12,12 @@ To run the code, first install the required python packages.
 pip install -r requirements.txt
 ```
 
-Then download corresponding resources ([link](TODO) TODO) to this directory and unzip it.
+Then download corresponding resources [link](https://zenodo.org/record/4587504) to this directory and unzip it.
+
+```
+cat KPCNet_resources.zip.00* > KPCNet_resources.zip
+unzip KPCNet_resources.zip
+```
 
 ## Quick start: Web demo with pretrained model
 
