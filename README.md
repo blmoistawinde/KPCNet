@@ -1,6 +1,6 @@
 # KPCNet
 
-Code for the WWW 2021 paper: Diverse and Specific Clarification Question Generation with Keywords
+Code for the WWW 2021 paper: [Diverse and Specific Clarification Question Generation with Keywords](./paper.pdf)
 
 The system requirements are:
 - Linux OS
