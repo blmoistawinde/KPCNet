@@ -15,6 +15,11 @@ pip install -r requirements.txt
 Then download corresponding resources [link](https://zenodo.org/record/4587504) to this directory and unzip it.
 
 ```
+wget https://zenodo.org/record/4587504/files/KPCNet_resources.zip.001
+wget https://zenodo.org/record/4587504/files/KPCNet_resources.zip.002
+wget https://zenodo.org/record/4587504/files/KPCNet_resources.zip.003
+wget https://zenodo.org/record/4587504/files/KPCNet_resources.zip.004
+
 cat KPCNet_resources.zip.00* > KPCNet_resources.zip
 unzip KPCNet_resources.zip
 ```
