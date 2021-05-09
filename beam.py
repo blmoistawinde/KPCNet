@@ -220,13 +220,13 @@ def evaluate_beam(word2index, index2word, encoder, decoder, kwd_predictor, kwd_b
                 indices[b] = torch.index_select(beam_vocab_idx[b], 0, topi[b])
                 backtrack_seqs[b, :, t] = indices[b]
                 for k in range(hparams.BEAM_SIZE):
-                    if word2index[EOS_token] in prev_backtrack_seqs[b, topi[b][k]/decoder.output_size, :t]:
-                        backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, topi[b][k]/decoder.output_size, :t]
+                    if word2index[EOS_token] in prev_backtrack_seqs[b, topi[b][k]//decoder.output_size, :t]:
+                        backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, topi[b][k]//decoder.output_size, :t]
                         continue
                     all_ended = False
-                    # topi[b][k]/decoder.output_size to get the corresponding prev BEAM
-                    prev_decoder_hiddens[k, :, b, :] = decoder_hiddens[topi[b][k]/decoder.output_size][:, b, :]
-                    backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, topi[b][k]/decoder.output_size, :t]
+                    # topi[b][k]//decoder.output_size to get the corresponding prev BEAM
+                    prev_decoder_hiddens[k, :, b, :] = decoder_hiddens[topi[b][k]//decoder.output_size][:, b, :]
+                    backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, topi[b][k]//decoder.output_size, :t]
             if all_ended:
                 break
 
@@ -516,7 +516,7 @@ def evaluate_diverse_beam(word2index, index2word, encoder, decoder, kwd_predicto
                     prev_indices[b, g * beam_each:(g + 1) * beam_each] = indices[b]
                     for k0 in range(beam_each):
                         k = k0 + g*beam_each
-                        # topi[b][k]/decoder.output_size to get the corresponding prev BEAM
+                        # topi[b][k]//decoder.output_size to get the corresponding prev BEAM
                         prev_decoder_hiddens[k, :, b, :] = decoder_hiddens[g*beam_each + topi[b][k0] / decoder.output_size][:, b, :]
                         backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, g*beam_each + topi[b][k0] / decoder.output_size, :t]
                         if word2index[EOS_token] not in prev_backtrack_seqs[b, g * beam_each + topi[b][k0] / decoder.output_size, :t]:
