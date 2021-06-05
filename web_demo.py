@@ -25,6 +25,12 @@ from flask import request, jsonify, redirect, url_for
 from nltk import sent_tokenize, word_tokenize
 
 app = Flask(__name__)
+word_embeddings = None
+word2index = None
+index2word = None
+index2kwd, kwd2index, index2cnt = None, None, None
+encoder, decoder, kwd_predictor, kwd_bridge = None, None, None, None
+filter_dict = None
 
 def text2words(text, max_len=200):
     return [x.lower() for sent in sent_tokenize(text)

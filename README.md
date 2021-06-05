@@ -2,6 +2,10 @@
 
 Code for the WWW 2021 paper: [Diverse and Specific Clarification Question Generation with Keywords](./paper.pdf)
 
+A Chinese blog with my reviews of clarification question generation, for readers interested in this topic. 
+
+[阐明性问题生成(clarification question generation)概览](https://zhuanlan.zhihu.com/p/366598339)
+
 The system requirements are:
 - Linux OS
 - Python 3
