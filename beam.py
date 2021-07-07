@@ -517,9 +517,9 @@ def evaluate_diverse_beam(word2index, index2word, encoder, decoder, kwd_predicto
                     for k0 in range(beam_each):
                         k = k0 + g*beam_each
                         # topi[b][k]//decoder.output_size to get the corresponding prev BEAM
-                        prev_decoder_hiddens[k, :, b, :] = decoder_hiddens[g*beam_each + topi[b][k0] / decoder.output_size][:, b, :]
-                        backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, g*beam_each + topi[b][k0] / decoder.output_size, :t]
-                        if word2index[EOS_token] not in prev_backtrack_seqs[b, g * beam_each + topi[b][k0] / decoder.output_size, :t]:
+                        prev_decoder_hiddens[k, :, b, :] = decoder_hiddens[g*beam_each + topi[b][k0] // decoder.output_size][:, b, :]
+                        backtrack_seqs[b, k, :t] = prev_backtrack_seqs[b, g*beam_each + topi[b][k0] // decoder.output_size, :t]
+                        if word2index[EOS_token] not in prev_backtrack_seqs[b, g * beam_each + topi[b][k0] // decoder.output_size, :t]:
                             all_ended = False
             if all_ended:
                 break
